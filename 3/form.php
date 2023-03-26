@@ -46,15 +46,24 @@
                     4</label>
 
             </div>
-            <div class="group">
-                <label for="powers">Сверхспособности:
-                <select class="form-control" name="abilities[]" id="powers" multiple="multiple">
-                    <option value="1">Бессмертие</option>
-                    <option value="2">Прохождение сквозь стены</option>
-                    <option value="3">Левитация</option>
-                </select></label>
-            </div>
-
+           
+<div class="group">
+        <p>Выбери сверхспособности:</p>
+        <ul>
+          <li>
+            <input type="checkbox" id="god" name="abilities[]" value=1>
+            <label for="god">бессмертие</label>
+          </li>
+          <li>
+            <input type="checkbox" id="noclip" name="abilities[]" value=2>
+            <label for="noclip">прохождение сквозь стены</label>
+          </li>
+          <li>
+            <input type="checkbox" id="levitation" name="abilities[]" value=3>
+            <label for="levitation">левитация</label>
+          </li>
+        </ul> 
+      </div>
 
             <div class="group">
                 <label for="bio">Биография:
