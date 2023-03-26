@@ -1,3 +1,5 @@
+
+ 
 <?php
 // Отправляем браузеру правильную кодировку,
 // файл index.php должен быть в кодировке UTF-8 без BOM.
@@ -83,9 +85,9 @@ if ($errors) {
 
 // Сохранение в базу данных.
 
-$user = 'u52854';
-$pass = '6516432';
-$db = new PDO('mysql:host=localhost;dbname=u52854', $user, $pass,
+$user = 'u52845';
+$pass = '126720';
+$db = new PDO('mysql:host=localhost;dbname=u52845', $user, $pass,
 [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]); // Заменить test на имя БД, совпадает с логином uXXXXX
 
 // Подготовленный запрос. Не именованные метки.
