@@ -86,7 +86,7 @@ if ($errors) {
 // Сохранение в базу данных.
 
 $user = 'u52845';
-$pass = '126720';
+$pass = '1206720';
 $db = new PDO('mysql:host=localhost;dbname=u52845', $user, $pass,
 [PDO::ATTR_PERSISTENT => true, PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]); // Заменить test на имя БД, совпадает с логином uXXXXX
 
