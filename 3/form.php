@@ -24,7 +24,7 @@
             <div class="group">
 
                 Дата рождения:
-                <input name="date" type="date" class="form-control" value="<?php echo date('Y-m-d'); ?>" />
+                <input name="date" type="date" class="form-control" value="" />
 
             </div>
             <div class="group">
