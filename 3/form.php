@@ -24,14 +24,14 @@
             <div class="group">
 
                 Дата рождения:
-                <input name="date" type="date" class="form-control" value="" />
+                <input name="date" type="date" class="form-control" />
 
             </div>
             <div class="group">
                 Пол:
-                <label for="g1"><input type="radio" class="form-check-input" name="gender" id="g1" value="1">
+                <label for="g1"><input type="radio" class="form-check-input" name="sex" id="g1" value="1">
                     Мужской</label>
-                <label for="g2"><input type="radio" class="form-check-input" name="gender" id="g2" value="2">
+                <label for="g2"><input type="radio" class="form-check-input" name="sex" id="g2" value="2">
                     Женский</label>
             </div>
             <div class="group">
