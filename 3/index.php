@@ -41,7 +41,7 @@ if (empty($_POST['date']) || !preg_match('%[1-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3]
   $errors = TRUE;
 }
 
-if (empty($_POST['sex']) || !in_array($_POST['sex'], ['w','m'])) {
+if (empty($_POST['sex']) || !in_array($_POST['sex'], ['1','2'])) {
   print('Укажите пол.<br/>');
   $errors = TRUE;
 }
