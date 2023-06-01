@@ -14,16 +14,16 @@
     <header>
         <div class="header-items">
             <a href="index.php" class="logo">
-                <img src="images/logo.png" alt="logo" width="37" height="37">
-                <h1>Компания</h1>
+                <img src="images/logo.png" alt="logo" height="100">
+                <h1>Учёт расхода материалов в Древо Индастрис&nbsp;&nbsp;</h1>
             </a>
+        </div>
+        <div class="navbar">
             <nav>
-                <ul>
-                    <li><a href="Sotrudniki.php">Список сотрудников</a></li>
-                    <li><a href="Zatrats.php">Список видов затрат</a></li>
-                    <li><a class="active" href="#">Список департаментов</a></li>
-                    <li><a href="Kans.php">Журнал учёта расхода канцтоваров</a></li>
-                </ul>
+                <a href="Sotrudniki.php"><div class="nav_a">Список сотрудников компании</div></a>
+                <a href="Zatrats.php"><div class="nav_a">Список статей затрат</div></a>
+                <a href="Departments.php"><div class="nav_a">Список департаментов</div></a>
+                <a id="alast" href="Kans.php"><div class="nav_a">Журнал учёта расхода канцтоваров</div></a>
             </nav>
         </div>
     </header>
