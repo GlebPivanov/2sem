@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link type="image/x-icon" href="images/logo.png" rel="shortcut icon">
     <link type="Image/x-icon" href="images/logo.png" rel="icon">
-    <title>Company</title>
+    <title>CCompany</title>
     <script>
     function toggleFilter() {
         var filterBlock = document.getElementById("filter-block");
@@ -36,16 +36,16 @@
     <header>
         <div class="header-items">
             <a href="index.php" class="logo">
-                <img src="images/logo.png" alt="logo" width="37" height="37">
-                <h1>Древо Индастрис</h1>
+                <img src="images/logo.png" alt="logo" height="100">
+                <h1>Учёт расхода материалов в Древо Индастрис&nbsp;&nbsp;</h1>
             </a>
+        </div>
+        <div class="navbar">
             <nav>
-                <ul>
-                    <li><a href="Sotrudniki.php">Список сотрудников</a></li>
-                    <li><a href="Zatrats.php">Список видов затрат</a></li>
-                    <li><a href="Departmentss.php">Список департаментов</a></li>
-                    <li><a class="active" href="#">Журнал учёта расхода канцтоваров</a></li>
-                </ul>
+                <a href="Sotrudniki.php"><div class="nav_a">Список сотрудников компании</div></a>
+                <a href="Zatrats.php"><div class="nav_a">Список статей затрат</div></a>
+                <a href="Departments.php"><div class="nav_a">Список департаментов</div></a>
+                <a id="alast" href="Kans.php"><div class="nav_a">Журнал учёта расхода канцтоваров</div></a>
             </nav>
         </div>
     </header>
@@ -138,10 +138,10 @@
                             </select>
                         </div>
                         <div class="newdates-item">
-                            <label for="date">Дата покупки</label>
+                            <label for="dateK">Дата покупки</label>
                         </div>
                         <div class="newdates-item">
-                            <input type="date" name="date" value=<?php print($new['date']); ?>>
+                            <input type="date" name="dateK" value=<?php print($new['dateK']); ?>>
                         </div>
                         <div class="newdates-item">
                             <input type="submit" name="addnewdate" value="Добавить">
@@ -267,7 +267,7 @@
                     echo        '</td>';
 
                     echo        '<td> <input'; if(empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['id'])) print(" disabled ");
-                                                else print(" "); echo 'type="date" name="date'.$value['id'].'" value="'.$value['date'].'"> 
+                                                else print(" "); echo 'type="dateK" name="date'.$value['id'].'" value="'.$value['dateK'].'"> 
                                 </td>';
 
                 if (empty($_COOKIE['edit']) || ($_COOKIE['edit'] != $value['id'])) {
