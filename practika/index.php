@@ -13,43 +13,43 @@
 <body>
     <header>
         <div class="header-items">
-            <a href="#" class="logo">
-                <img src="images/logo.png" alt="logo" width="37" height="37">
+            <a href="index.php" class="logo">
+                <img src="images/logo.png" alt="logo" height="100">
                 <h1>Учёт расхода материалов в Древо Индастрис&nbsp;&nbsp;</h1>
             </a>
+        </div>
+        <div class="navbar">
             <nav>
-                <ul>
-                    <li><a href="Sotrudniki.php">Список сотрудников компании</a></li>
-                    <li><a href="Zatrats.php">Список статей затрат</a></li>
-                    <li><a href="Departments.php">Список департаментов</a></li>
-                    <li><a href="Kans.php">Журнал учёта расхода канцтоваров</a></li>
-                </ul>
+                <a href="Sotrudniki.php"><div class="nav_a">Список сотрудников компании</div></a>
+                <a href="Zatrats.php"><div class="nav_a">Список статей затрат</div></a>
+                <a href="Departments.php"><div class="nav_a">Список департаментов</div></a>
+                <a id="alast" href="Kans.php"><div class="nav_a">Журнал учёта расхода канцтоваров</div></a>
             </nav>
         </div>
     </header>
     <main>
         <div class="main-item">
             <a href="Sotrudniki.php">
-                <img src="images/Sotrudniki.png" width="100" height="100" alt="Sotrudniki">
-                <p>Список<br>сотрудников компании</p>
+                <img src="images/Sotrudniki.png" height="100" alt="Сотрудники">
+                <p>Список сотрудников компании</p>
             </a>
         </div>
         <div class="main-item">
             <a href="Zatrats.php">
-                <img src="images/Zatrats.png" width="157" height="100" alt="Zatrats">
-                <p>Список<br>затрат</p>
+                <img src="images/Zatrats.png" height="100" alt="Затраты">
+                <p>Список статей затрат</p>
             </a>
         </div>
         <div class="main-item">
             <a href="Departments.php">
-                <img src="images/Departments.png" width="100" height="100" alt="Departments">
-                <p>Список<br>департаментов</p>
+                <img src="images/Departments.png" height="100" alt="Департаменты">
+                <p>Список департаментов</p>
             </a>
         </div>
         <div class="main-item">
             <a href="Kans.php">
-                <img src="images/Kans.png" width="100" height="100" alt="Kans">
-                <p>Журнал учёта<br>расхода канцтоваров</p>
+                <img src="images/Kans.png" height="100" alt="Канцелярия">
+                <p>Журнал учёта расхода канцтоваров</p>
             </a>
         </div>
     </main>
