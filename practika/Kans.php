@@ -4,11 +4,11 @@ include('dbconnect.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     try {
-        $stmt = $db->prepare("SELECT id, SotrudnikID, ZatratId, DepartmentID, date FROM Kans");
+        $stmt = $db->prepare("SELECT id, SotrudnikID, ZatratId, DepartmentID, dateK FROM Kans");
         $params = [];
 
         if (!empty($_COOKIE['datex'])) {
-            $stmt_sql = isset($stmt_sql) ? $stmt_sql." AND date = ?" : "date = ?";
+            $stmt_sql = isset($stmt_sql) ? $stmt_sql." AND dateK = ?" : "dateK = ?";
             $params[] = $_COOKIE['datex'];
         }
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         }
 
         if (isset($stmt_sql)) {
-            $stmt_sql = "SELECT id, SotrudnikID, ZatratId, DepartmentID, date FROM Kans WHERE ".$stmt_sql;
+            $stmt_sql = "SELECT id, SotrudnikID, ZatratId, DepartmentID, dateK FROM Kans WHERE ".$stmt_sql;
             $stmt = $db->prepare($stmt_sql);
             $stmt->execute($params);
             $values = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $new['SotrudnikID'] = empty($_COOKIE['SotrudnikID']) ? '' : $_COOKIE['SotrudnikID'];
     $new['ZatratId'] = empty($_COOKIE['ZatratId']) ? '' : $_COOKIE['ZatratId'];
     $new['DepartmentID'] = empty($_COOKIE['DepartmentID']) ? '' : $_COOKIE['DepartmentID'];
-    $new['date'] = empty($_COOKIE['date']) ? '' : $_COOKIE['date'];
+    $new['dateK'] = empty($_COOKIE['dateK']) ? '' : $_COOKIE['dateK'];
     include('vids/Kans.php');
 } else {
     $errors = array();
@@ -84,26 +84,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             setcookie('DepartmentID', $_POST['DepartmentID'], time() + 24 * 60 * 60);
         }
 
-        if (empty($_POST['date'])) {
-            $errors['date'] = 'Заполните поле "date"';
+        if (empty($_POST['dateK'])) {
+            $errors['dateK'] = 'Заполните поле "date"';
         } else {
-            setcookie('date', $_POST['date'], time() + 24 * 60 * 60);
+            setcookie('dateK', $_POST['dateK'], time() + 24 * 60 * 60);
         }
 
         if (empty($errors)) {
             $SotrudnikID = $_POST['SotrudnikID'];
             $ZatratId = $_POST['ZatratId'];
             $DepartmentID = $_POST['DepartmentID'];
-            $date = $_POST['date'];
+            $dateK = $_POST['dateK'];
 
-            $stmt = $db->prepare("INSERT INTO Kans (SotrudnikID, ZatratId, DepartmentID, date) 
+            $stmt = $db->prepare("INSERT INTO Kans (SotrudnikID, ZatratId, DepartmentID, dateK) 
                 VALUES (?, ?, ?, ?)");
-            $stmt->execute([$SotrudnikID, $ZatratId, $DepartmentID, $date]);
+            $stmt->execute([$SotrudnikID, $ZatratId, $DepartmentID, $dateK]);
             $messages['added'] = 'Данные успешно добавлены';
             setcookie('SotrudnikID', '', time() + 24 * 60 * 60);
             setcookie('ZatratId', '', time() + 24 * 60 * 60);
             setcookie('DepartmentID', '', time() + 24 * 60 * 60);
-            setcookie('date', '', time() + 24 * 60 * 60);
+            setcookie('dateK', '', time() + 24 * 60 * 60);
         }
     } 
     foreach ($_POST as $key => $value) {
@@ -120,18 +120,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         if (preg_match('/^save(\d+)_x$/', $key, $matches)) {
             setcookie('edit', '', time() + 24 * 60 * 60);
             $id = $matches[1];
-            $stmt = $db->prepare("SELECT SotrudnikID, ZatratId, DepartmentID, date FROM Kans WHERE id = ?");
+            $stmt = $db->prepare("SELECT SotrudnikID, ZatratId, DepartmentID, dateK FROM Kans WHERE id = ?");
             $stmt->execute([$id]);
             $old_dates = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             $dates['SotrudnikID'] = $_POST['SotrudnikID' . $id];
             $dates['ZatratId'] = $_POST['ZatratId' . $id];
             $dates['DepartmentID'] = $_POST['DepartmentID' . $id];
-            $dates['date'] = $_POST['date' . $id];
+            $dates['dateK'] = $_POST['dateK' . $id];
 
             if (array_diff_assoc($dates, $old_dates[0])) {
-                $stmt = $db->prepare("UPDATE Kans SET SotrudnikID = ?, ZatratId = ?, DepartmentID = ?, date = ? WHERE id = ?");
-                $stmt->execute([$dates['SotrudnikID'], $dates['ZatratId'], $dates['DepartmentID'], $dates['date'], $id]);
+                $stmt = $db->prepare("UPDATE Kans SET SotrudnikID = ?, ZatratId = ?, DepartmentID = ?, dateK = ? WHERE id = ?");
+                $stmt->execute([$dates['SotrudnikID'], $dates['ZatratId'], $dates['DepartmentID'], $dates['dateK'], $id]);
                 $messages['edited'] = 'Запись с <b>id = '.$id.'</b> успешно обновлена';
             }
         }
@@ -145,8 +145,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
     if (!empty($_POST['filter'])) {
 
-        if (!empty($_POST['date']))
-            setcookie('datex', $_POST['date']);
+        if (!empty($_POST['dateK']))
+            setcookie('datex', $_POST['dateK']);
 
         $filter_zatrat_ids = array();
         foreach ($_POST as $key => $value) {
