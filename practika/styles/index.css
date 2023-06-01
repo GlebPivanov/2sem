@@ -2,22 +2,53 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: #f3e4b1;
 }
 
-header {
-    background-color: #444d14;
-    color: #fff;
-    padding: 20px;
-}
 
 .header-items {
-    margin-left: 20%;
-    margin-right: 20%;
+    background-color: #606b30;
+    color: #000000;
+    padding: 20px;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 
-header h1 a, header h1 a:active {
+
+.navbar{
+    width: 60%;
+    margin: 20px auto;
+    background: #606b30;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+nav {
+    display: flex;
+}
+
+.nav_a {
+    text-align: center;
+    margin: 0 auto;
+}
+
+nav a:hover {
+    background: #6f7a3b;
+}
+
+nav a{
+    border-right: 1px solid #ffffff6b;
+    text-align: center;
+    color: black;
     text-decoration: none;
-    color: #fff;
+    padding: 10px;
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+
+#alast {
+    border: none;
 }
 
 h1 {
@@ -32,18 +63,8 @@ h1 {
     align-items: center;
     margin-bottom: 10px;
     text-decoration: none;
-    color: #fff;
-}
-
-nav ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-nav li {
-    display: inline-block;
-    margin-right: 20px;
+    font-size: x-large;
+    color: #000000;
 }
 
 nav li a {
@@ -51,15 +72,12 @@ nav li a {
     text-decoration: none;
 }
 
-nav li a:hover {
-    text-decoration: underline;
-}
-
 main {
+    margin: 0 auto;
+    width: 90%;
     padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: center;
     min-height: 80vh;
 }
 
@@ -68,48 +86,32 @@ main {
 }
 
 .main-item {
-    background-color: #a1b628ab;
+    background-color: #ffffff;
+    width: 250px;
+    height: 280px;
     font-size: large;
-    margin: 100px;
+    transition: 0.1s ease-out;
+    margin: 20px auto;
     display: flex;
-    justify-content: center;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.main-item:hover {
+    margin: 10px auto;
+    transition: 0.1s ease-out;
 }
 
 .main-item a {
     color: black;
     text-decoration: none;
     padding: 30px 50px 30px 50px;
+    text-align: center;
 }
+
 
 .main-item p {
     text-align: center;
 }
 
-@media screen and (max-width: 1850px) {
-    main {
-        justify-content: baseline;
-        flex-direction: column;
-    }
-
-    header {
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-}
   
-@media screen and (max-width: 1000px) {
-    html {
-        background-color: white;
-        width: 100%;
-    }
-
-    main, .header-items {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    header {
-        padding-top: 5px;
-        padding-bottom: 5px;
-    }
-}
