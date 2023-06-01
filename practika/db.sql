@@ -22,7 +22,7 @@ CREATE TABLE Kans (
     SotrudnikID INTEGER NOT NULL,
     ZatratId INTEGER NOT NULL,
     DepartmentID INTEGER NOT NULL,
-    date DATE NOT NULL,
+    dateK DATE NOT NULL,
     FOREIGN KEY (SotrudnikID) REFERENCES Sotrudniki (id),
     FOREIGN KEY (ZatratId) REFERENCES Zatrats (id),
     FOREIGN KEY (DepartmentID) REFERENCES Departments (id)
